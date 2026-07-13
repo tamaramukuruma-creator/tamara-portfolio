@@ -123,7 +123,7 @@ body {
         0 0 40px rgba(108, 76, 241, 0.35),
         0 20px 50px rgba(108, 76, 241, 0.20);
 
-    animation: float 4s ease-in-out infinite;
+    animation: float 3s ease-in-out infinite;
 }
 
 .hero-image img {
@@ -437,4 +437,112 @@ body {
 
 .floating-whatsapp:hover{
     transform: scale(1.1);
+}
+/* Prevent width issues */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Better mobile rendering */
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Hero section spacing */
+.hero {
+  padding: 100px 24px 60px;
+}
+
+/* Mobile navigation */
+.navbar {
+  width: 100%;
+  padding: 15px 20px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Better typography scaling */
+.hero h1 {
+  font-size: clamp(2.5rem, 10vw, 4rem);
+  line-height: 1.1;
+}
+
+.hero p {
+  font-size: 1rem;
+  padding: 0 10px;
+}
+
+/* Buttons */
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Social icons */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+/* WhatsApp button */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 20px;
+  z-index: 999;
+}
+
+/* iOS safe areas */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+@media (max-width: 480px) {
+  .nav-links {
+    gap: 10px;
+    font-size: 0.8rem;
+  }
+
+  .hero {
+    padding: 90px 20px 50px;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+
+  .social-links {
+    gap: 14px;
+  }
+}
+@keyframes float {
+  0%,100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
 }
