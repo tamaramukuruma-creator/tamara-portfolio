@@ -71,3 +71,9 @@ document.getElementById("contact-btn")
     });
 
 });
+document.getElementById("projects-btn").addEventListener("click", () => {
+    document.querySelector("#projects").scrollIntoView({
+        behavior: "smooth"
+    });
+});
+
