@@ -22,40 +22,7 @@ window.addEventListener("load", () => {
 });
 
 
-/*==============================
-        MOBILE MENU
-==============================*/
 
-const menuButton = document.querySelector(".menu-toggle");
-
-const closeButton = document.querySelector(".close-menu");
-
-const mobileMenu = document.querySelector(".mobile-menu");
-
-
-menuButton.addEventListener("click", () => {
-
-    mobileMenu.style.right = "0";
-
-});
-
-
-closeButton.addEventListener("click", () => {
-
-    mobileMenu.style.right = "-100%";
-
-});
-
-
-document.querySelectorAll(".mobile-menu a").forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        mobileMenu.style.right = "-100%";
-
-    });
-
-});
 
 
 /*==============================
@@ -195,5 +162,25 @@ window.addEventListener("scroll", () => {
         if (elementTop < windowHeight - revealPoint) {
             element.classList.add("active");
         }
+    });
+});
+/*==============================
+        MOBILE MENU
+==============================*/
+const menuToggle = document.querySelector(".menu-toggle");
+const mobileMenu = document.querySelector(".mobile-menu");
+const closeMenu = document.querySelector(".close-menu");
+
+menuToggle.addEventListener("click", () => {
+    mobileMenu.classList.add("active");
+});
+
+closeMenu.addEventListener("click", () => {
+    mobileMenu.classList.remove("active");
+});
+
+document.querySelectorAll(".mobile-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+        mobileMenu.classList.remove("active");
     });
 });
